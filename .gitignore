@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+data/
+logs/
+*.sqlite3
+
+# Research outputs and generated artifacts
+reports/
+*.csv
+*.parquet
+.DS_Store
+
+vwapbot.log

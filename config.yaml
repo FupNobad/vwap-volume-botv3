@@ -1,0 +1,33 @@
+exchange:
+  id: binanceusdm
+  sandbox: false
+  # Public data only. Sandbox setting is for future testnet adapter work;
+  # this project does not submit exchange orders.
+strategy:
+  symbols: ["BTC/USDT", "ETH/USDT"]
+  timeframe: "5m"
+  volume_multiple: 3.0
+  volume_lookback_days: 7
+  daily_vwap_timezone: "UTC"
+  weekly_vwap_week_start: "W-MON"
+  atr_period: 14
+  stop_atr_multiple: 1.5
+  take_profit_r_multiple: 2.0
+risk:
+  initial_equity_quote: 1000.0
+  risk_per_trade_fraction: 0.0025
+  max_daily_loss_fraction: 0.01
+  max_open_positions: 1
+  max_notional_fraction_of_equity: 1.0
+costs:
+  # Configure to your actual account tier. These are placeholders, not current fee quotes.
+  taker_fee_rate: 0.0005
+  slippage_bps_per_side: 2.0
+  # Funding is applied from historical funding records in backtests when supplied.
+  fallback_funding_rate_per_8h: 0.0
+runtime:
+  mode: "paper"  # backtest | paper
+  live_order_execution_enabled: false
+  poll_seconds: 20
+  sqlite_path: "data/vwapbot.sqlite3"
+  log_path: "logs/vwapbot.log"
